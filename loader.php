@@ -10,7 +10,7 @@ class Load{
 			$value=basename($path,'_model.php');
 			include $path;
 		else:	
-			die('<b> Such File does not exist </b>');
+			die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
@@ -22,7 +22,7 @@ class Load{
 			$value=basename($path,'_helper.php');
 			include $path;
 		else:
-			die('<b> Such File does not exist </b>');
+			die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
@@ -34,7 +34,7 @@ class Load{
 				$value=basename($path,'.class.php');
 				include $path;
 		else:
-				die('<b> Such File does not exist </b>');	
+				die('<b> Such '.__FUNCTION__.' File does not exist </b>');	
 		endif;
 	}
 
@@ -46,7 +46,7 @@ class Load{
 				$value=basename($path,'_config.php');
 				include $path;
 		else:
-				die('<b> Such File does not exist </b>');
+				die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
@@ -58,7 +58,7 @@ class Load{
 				$value=basename($path,'_package.php');
 				include $path;
 		else:
-				die('<b> Such File does not exist </b>');
+				die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
@@ -70,7 +70,7 @@ class Load{
 				$value=basename($path,'.php');
 				include $path;
 		else:
-				die('<b> Such File does not exist </b>');
+				die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
@@ -83,7 +83,7 @@ class Load{
 				$value=basename($path,'.php');
 				include $path;
 		else:
-				die('<b> Such File does not exist </b>');
+				die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
@@ -95,7 +95,7 @@ class Load{
 				$value=basename($path);
 				include $path;
 		else:
-				die('<b> Such File does not exist </b>');
+				die('<b> Such '.__FUNCTION__.' File does not exist </b>');
 		endif;
 	}
 
