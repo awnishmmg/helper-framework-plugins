@@ -78,7 +78,7 @@ class Load{
 	//Any General PHP File with Folder Name
 	public static function php_file($file){
 		
-		$path=dirname(__DIR__)."/".$from."/{$file}.php";
+		$path=dirname(__DIR__)."/{$file}.php";
 		if(file_exists($path)):
 				$value=basename($path,'.php');
 				include $path;
@@ -90,7 +90,7 @@ class Load{
 	//Any File with Root Folder and File name with Any Extension
 	public static function file($file){
 		
-		$path=dirname(__DIR__)."/".$from."/{$file}";
+		$path=dirname(__DIR__)."/{$file}.php";
 		if(file_exists($path)):
 				$value=basename($path);
 				include $path;
