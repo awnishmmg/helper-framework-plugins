@@ -7,13 +7,12 @@ return [
 
 			'SYSTEM_PATH'=>'system',
 
-			'APP_PATH'=>'http://localhost/myproject/way2mint/Knowlarity/web-app/',
+			'APP_PATH'=>'http://localhost/myproject/example/web-app/',
 
 			'API_PATH'=>'',
 
-			'ADMIN_PATH'=>'http://localhost/myproject/way2mint/Knowlarity/web-app/admin/',
-			
-			'AJAX_PATH'=>'http://localhost/myproject/way2mint/Knowlarity/web-app/ajax/',
+			'ADMIN_PATH'=>'http://localhost/myproject/example/web-app/admin/',
+			'AJAX_PATH'=>'http://localhost/myproject/example/web-app/ajax/',
 		],
 
 		'database'=>[
