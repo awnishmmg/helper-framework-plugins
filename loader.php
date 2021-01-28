@@ -90,7 +90,7 @@ class Load{
 	//Any File with Root Folder and File name with Any Extension
 	public static function file($file){
 		
-		$path=dirname(__DIR__)."/{$file}.php";
+		$path=dirname(__DIR__)."/{$file}";
 		if(file_exists($path)):
 				$value=basename($path);
 				include $path;
@@ -99,5 +99,25 @@ class Load{
 		endif;
 	}
 
+	public static function view($file,$tmp_data=[]){
+
+		$path=dirname(__DIR__)."/".__FUNCTION__."/{$file}_view.php";
+		if(file_exists($path)){
+			
+			//define the values
+			if(count($tmp_data)>0):
+				foreach ($tmp_data as $key => $value) {
+					$$key = $value;		
+				}
+			endif;
+			include $path;
+		}else{
+
+			die('<b> Such '.__FUNCTION__.' File does not exist </b>');
+
+		}//end if-else
+
+
+}//end of Views Functions
 
 }
