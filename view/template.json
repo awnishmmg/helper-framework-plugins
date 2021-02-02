@@ -1,0 +1,10 @@
+{
+	"index":{
+		"title":"Admin Dashboard",
+		"bread_title":"Admin/Dashboard"
+	},
+	"test":{
+		"title":"Test Dashboard",
+		"bread_title":"Home/Dashboard"
+	}	
+}
