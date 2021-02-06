@@ -18,6 +18,11 @@ function display_filesize($filesize){
    
 }
 
+
+function set_msg($arr){
+	$GLOBALS['msg']=$arr;
+}
+
 //sanitisation
 function sanitise($arg){
 $arg = strip_tags($arg);
@@ -104,11 +109,7 @@ function method(){
 }
 
 
-//set the key in settings 
-// in settings.php inside config 'salt_hash' 
-// and default algorithm you prefer like md5,sha,crypt,password_hash
-// in key 'pass_encrypt' => 'md5' etc,
-// and then call pass_encrypt function
+
 function pass_encrypt($argument){
 	global $settings;
 	$hash=md5($settings['salt_hash']);
@@ -116,11 +117,33 @@ function pass_encrypt($argument){
 }
 
 
-function set_flash($keyname,$value){
+function set_flash($keyname,$value,$param=[]){
+	
+	if(count($param)>0){
+		set_msg($param);
+	}
+
 	$_REQUEST[$keyname] = $value;
 }
 
-
-
+//get Cleint Ip
+function get_client_ip() {
+    $ipaddress = '';
+    if (isset($_SERVER['HTTP_CLIENT_IP']))
+        $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_X_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_X_FORWARDED'];
+    else if(isset($_SERVER['HTTP_FORWARDED_FOR']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED_FOR'];
+    else if(isset($_SERVER['HTTP_FORWARDED']))
+        $ipaddress = $_SERVER['HTTP_FORWARDED'];
+    else if(isset($_SERVER['REMOTE_ADDR']))
+        $ipaddress = $_SERVER['REMOTE_ADDR'];
+    else
+        $ipaddress = 'UNKNOWN';
+    return $ipaddress;
+}
 
 ?>
