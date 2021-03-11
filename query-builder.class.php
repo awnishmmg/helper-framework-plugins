@@ -753,7 +753,8 @@ function poly_join($joins_params,$on_columns,$jointype='INNER',$where=[]){
 }
 
 function like($request_fn='',$keyname=[],$case='both',$sep='or'){
-	
+	global $chain;
+	global $con;
 	if($request_fn == ''){
 		die('* Not chaining function found ');
 	}
